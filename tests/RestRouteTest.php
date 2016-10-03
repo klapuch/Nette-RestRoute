@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak;
+namespace Klapuch;
 
 use Nette\Http\UrlScript;
 use Nette\Http\Request;
@@ -50,6 +50,27 @@ class RestRouteTest extends \PHPUnit_Framework_TestCase {
 
     $expectedUrl = 'http://localhost/resource?access_token=foo-bar';
     $this->assertEquals($expectedUrl, $url);
+  }
+
+  public function testConvertedDataTypesInQuery() {
+    $route = new RestRoute;
+
+    $url = new UrlScript('http://localhost');
+    $url->setPath('/resource');
+    $url->setQuery(
+      [
+        'access_token' => 'foo-bar',
+		'number' => '10',
+      ]
+    );
+
+    $request = new Request($url, NULL, NULL, NULL, NULL, NULL, 'GET');
+
+    $appRequest = $route->match($request);
+	$this->assertContains(
+		['access_token' => 'foo-bar', 'number' => 10],
+		$appRequest->getParameters()
+	);
   }
 
   public function testMatchAndConstructSpinalCaseUrlSingleResource() {

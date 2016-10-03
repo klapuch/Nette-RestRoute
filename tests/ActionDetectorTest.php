@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak;
+namespace Klapuch;
 
 use Nette\Http\UrlScript;
 use Nette\Http\Request;

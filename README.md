@@ -17,13 +17,13 @@ Variable ```$format``` is detected from HTTP header ```Accept```. If header is n
 The best way to install Nette-RestRoute is using  [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require adamstipak/nette-rest-route
+$ composer require klapuch/nette-rest-route
 ```
 
 ## Usage:
 
 ```php
-use AdamStipak\RestRoute;
+use Klapuch\RestRoute;
 
 // $router is an instance of Nette\Application\Routers\RouteList  
 

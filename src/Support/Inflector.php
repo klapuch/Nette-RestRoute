@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak\Support;
+namespace Klapuch\Support;
 
 use Nette\Utils\Strings;
 

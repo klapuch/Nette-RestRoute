@@ -1,17 +1,26 @@
 {
-  "name": "adamstipak/nette-rest-route",
+  "name": "klapuch/nette-rest-route",
   "description": "Rest route for Nette Framework",
-  "keywords": ["nette", "routing"],
+  "keywords": [
+    "nette",
+    "routing"
+  ],
   "license": "MIT",
-  "homepage": "https://github.com/newPOPE/Nette-RestRoute",
+  "homepage": "https://github.com/klapuch/Nette-RestRoute",
   "authors": [
     {
       "name": "Adam Štipák",
       "homepage": "http://newpope.org"
+    },
+    {
+      "name": "Dominik Klapuch",
+      "homepage": "https://www.github.com/klapuch"
     }
   ],
   "autoload": {
-    "psr-4": {"AdamStipak\\": "src/"}
+    "psr-4": {
+      "Klapuch\\": "src/"
+    }
   },
   "require": {
     "php": "^5.6|^7.0",
