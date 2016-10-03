@@ -99,12 +99,11 @@ class RestRoute extends Object implements IRouter {
 		$params['format'] = $this->detectFormat($httpRequest);
 		$params['associations'] = $assoc;
 		$params['data'] = $this->readInput();
-		$params['query'] = $httpRequest->getQuery();
 		$params['query'] = array_map(
 			function($parameter) {
 				return is_numeric($parameter) ? (int)$parameter : $parameter;
 			},
-			$params['query']
+			$httpRequest->getQuery()
 		);
 		$presenterName = empty($this->module) ? $presenterName : $this->module . ':' . $presenterName;
 		return new Request(
